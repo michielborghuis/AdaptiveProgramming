@@ -1,28 +1,35 @@
 package formatieveOpdracht2a;
 
+import java.awt.geom.NoninvertibleTransformException;
+
 public class Node {
     private String stateName;
-    private String nextStateA;
-    private String nextStateB;
+    private Node nextStateA;
+    private Node nextStateB;
 
-    public Node (String st, String nsA, String nsB) {
+    public Node (String st) {
         stateName = st;
-        nextStateA = nsA;
-        nextStateB = nsB;
+    }
+    public void setNextStateA(Node n){
+        nextStateA = n;
     }
 
-    public String getState(){
+    public void setNextStateB(Node n) {
+        nextStateB = n;
+    }
+    public String getStateName(){
         return stateName;
     }
-    public String getNextStateA(){
-        return nextStateA;
-    }
-    public String getNextStateB(){
-        return nextStateB;
-    }
 
-    @Override
-    public String ToString(){
-        return
+    public Node nodeReturn(String s){
+        if (s.equals("A")){
+            return nextStateA;
+        }
+        if (s.equals("B")) {
+            return nextStateB;
+        }
+        else{
+            return null;
+        }
     }
 }
