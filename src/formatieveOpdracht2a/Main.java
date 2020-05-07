@@ -1,7 +1,5 @@
 package formatieveOpdracht2a;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args){
         Node n0 = new Node("s0");
@@ -10,13 +8,13 @@ public class Main {
         Node n3 = new Node("s3");
         n3.setNextStateA(n3);
         n3.setNextStateB(n0);
-        n2.setNextStateA(n2);
+        n2.setNextStateA(null);
         n2.setNextStateB(n3);
         n1.setNextStateA(n1);
         n1.setNextStateB(n2);
         n0.setNextStateA(n2);
         n0.setNextStateB(n1);
-        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"B", "A", "A", "B"}, n0);
+        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"B", "A", "A", "B", "A"}, n0);
         for (Node n: f1.toNode()){
             System.out.println(n.getStateName());
         }
