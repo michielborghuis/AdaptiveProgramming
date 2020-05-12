@@ -22,11 +22,11 @@ public class Node {
     public String getStateName(){
         return stateName;
     }
-    public Node nodeReturn(int i){
-        if (i == 0){
+    public Node nodeReturn(String s){
+        if (s.equals("A")){
             return nextStateA;
         }
-        if(i == 1){
+        if(s.equals("B")){
             return nextStateB;
         }
         else{

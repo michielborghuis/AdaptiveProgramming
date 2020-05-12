@@ -15,8 +15,11 @@ public class FiniteStateMachine {
         Node currentNode = nodes.get(0);
         Random rand = new Random();
         while (currentNode.getEndNode() != true){
+            String s;
             int n = rand.nextInt(2);
-            Node newNode = currentNode.nodeReturn(n);
+            if (n==0){ s = "A"; }
+            else{ s = "B"; }
+            Node newNode = currentNode.nodeReturn(s);
             currentNode = newNode;
         }
         return currentNode.getStateName();
