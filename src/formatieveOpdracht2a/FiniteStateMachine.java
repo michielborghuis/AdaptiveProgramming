@@ -11,18 +11,20 @@ public class FiniteStateMachine {
         currentNode = nd;
     }
 
-    public ArrayList<Node> toNode(){
+    public ArrayList<Node> toNode() {
         int length = sequence.length;
         nodes.add(0, currentNode);
         Node currentNode = nodes.get(0);
-        for (int i = 0; i < length; i++){
-            Node newNode = currentNode.nodeReturn(sequence[i]);
-            nodes.add(i+1, newNode);
-            currentNode = newNode;
+        for (int i = 0; i < length; i++) {
+            if(currentNode.nodeReturn(sequence[i]) != null) {
+                Node newNode = currentNode.nodeReturn(sequence[i]);
+                nodes.add(i + 1, newNode);
+                currentNode = newNode;
+            }
+            else{return nodes;}
         }
         return nodes;
     }
-
     public String nodeToString(){
         return nodes.toString();
     }
