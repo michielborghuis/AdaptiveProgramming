@@ -6,11 +6,11 @@ public class Node {
     private Node nextStateB;
     private boolean endNode;
 
-    public Node(String st, Node nsA, Node nsB, boolean b){
+    public Node(String st, Node nsA, Node nsB, boolean end){
         stateName = st;
         nextStateA = nsA;
         nextStateB = nsB;
-        endNode = b;
+        endNode = end;
     }
     public void setNextStateA(Node n){
         nextStateA = n;
