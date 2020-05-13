@@ -12,9 +12,8 @@ public class Main {
         s2.setNextStateB(s3);
         s1.setNextStateA(s1);
         FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"B", "A", "A", "B", "B", "B", "A"}, s0);
-        for (Node n: f1.getNodes()){
-            System.out.println(n.getStateName());
-        }
+        System.out.println(f1.getNodes());
+
 
         Node d1 = new Node("dice1", null, null, true);
         Node d2 = new Node("dice2", null, null,true);
