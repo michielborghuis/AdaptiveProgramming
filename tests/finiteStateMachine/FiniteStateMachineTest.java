@@ -8,7 +8,6 @@ public class FiniteStateMachineTest {
 
     @Test
     public void getNodes() {
-
     }
 
     @Test

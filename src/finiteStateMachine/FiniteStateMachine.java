@@ -30,13 +30,12 @@ public class FiniteStateMachine {
         nodes.add(0, currentNode);  //voegt de eerste node(beginstate) toe
         Node currentNode = nodes.get(0);
         Random rand = new Random();
-        while (currentNode.getEndNode() != true){ //gaat naar de volgende state zolang de huidige state geen eindstate(kan van dobbelsteen) is
+        while (!currentNode.getEndNode()){ //gaat naar de volgende state zolang de huidige state geen eindstate(kan van dobbelsteen) is
             int n = rand.nextInt(2); //genereert een getal 0 of 1, om een kans van 50% te geven
             String s;
             if (n==0){ s = "A"; }
             else{ s = "B"; }
-            Node newNode = currentNode.nodeReturn(s);
-            currentNode = newNode;
+            currentNode = currentNode.nodeReturn(s);
         }
         return currentNode.getStateName();
     }
