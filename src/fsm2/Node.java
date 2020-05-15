@@ -1,21 +1,32 @@
 package fsm2;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Node {
     private String stateName;
     private ArrayList<Node> options;
     private ArrayList<String> keys;
+    private ArrayList<Double> chances;
     private boolean endNode;
 
-    public Node(String st, ArrayList<String> ks, boolean end){
+    public Node(String st, boolean end){
         stateName = st;
-        keys = ks;
-        chances = cha;
         endNode = end;
     }
 
+    public void setKeys(ArrayList<String> ks){
+        keys = ks;
+    }
     public void setOptions(ArrayList<Node> opt){
         options = opt;
+    }
+
+    public void setChances(ArrayList<Double> cha){
+        chances = cha;
+    }
+
+    public ArrayList<Double> getChances(){
+        return chances;
     }
 
     public boolean getEndNode(){
@@ -34,6 +45,10 @@ public class Node {
             return null;
         }
     }
+    public Node returnNodeChance(int i){
+        return options.get(i);
+    }
+
     public String toString() {
         return stateName;
     }

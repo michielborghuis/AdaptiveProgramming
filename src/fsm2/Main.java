@@ -8,14 +8,18 @@ public class Main {
     public static void main(String[] args){
 
         //maakt nodes aan voor de FiniteStateMachine die een tekst verwerkt
+        Node s0 = new Node("s0", false);
+        Node s1 = new Node("s1", false);
+        Node s2 = new Node("s2", false);
+        Node s3 = new Node("s3", false);
         ArrayList<String> keys0 = new ArrayList<>(Arrays.asList("A", "B"));
         ArrayList<String> keys1 = new ArrayList<>(Arrays.asList("A", "B"));
         ArrayList<String> keys2 = new ArrayList<>(Arrays.asList("B"));
         ArrayList<String> keys3 = new ArrayList<>(Arrays.asList("A", "B"));
-        Node s0 = new Node("s0", keys0, false);
-        Node s1 = new Node("s1", keys1, false);
-        Node s2 = new Node("s2", keys2, false);
-        Node s3 = new Node("s3", keys3, false);
+        s0.setKeys(keys0);
+        s1.setKeys(keys1);
+        s2.setKeys(keys2);
+        s3.setKeys(keys3);
         ArrayList<Node> options0 = new ArrayList<>(Arrays.asList(s2, s1));
         ArrayList<Node> options1 = new ArrayList<>(Arrays.asList(s1, s2));
         ArrayList<Node> options2 = new ArrayList<>(Arrays.asList(s3));
@@ -24,30 +28,60 @@ public class Main {
         s1.setOptions(options1);
         s2.setOptions(options2);
         s3.setOptions(options3);
-        ArrayList<Double> chances0 = new ArrayList<>(Arrays.asList(0.5, 0.5));
-        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"A", "A", "A"}, s0, chances0);
+        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"A", "A", "A"}, s0);
         System.out.println(f1.getNodes());
 
 
-        Arr
 
-//        s3.setOptions(ArrayList<Node>{s3, s0});
-//        s2.setOptions(ArrayList<Node>{s3});
-//        s1.setOptions(ArrayList<Node>{s1, s2});
-//        s0.setOptions(ArrayList<Node>{s2, s1});
-//        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"B", "A", "A", "B", "B", "B", "A"}, s0);
-//        System.out.println(f1.getNodes());
+        Node n0 = new Node("n0", false);
+        Node n1 = new Node("n1", false);
+        Node n2 = new Node("n2", false);
+        Node n3 = new Node("n3", false);
+        Node n4 = new Node("n4", false);
+        Node n5 = new Node("n5", false);
+        Node n6 = new Node("n6", false);
+        Node d1 = new Node("dice1", true);
+        Node d2 = new Node("dice2", true);
+        Node d3 = new Node("dice3", true);
+        Node d4 = new Node("dice4", true);
+        Node d5 = new Node("dice5", true);
+        Node d6 = new Node("dice6", true);
+        ArrayList<Double> chances0 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances1 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances2 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances3 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances4 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances5 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        ArrayList<Double> chances6 = new ArrayList<>(Arrays.asList(0.5, 0.5));
+        n0.setChances(chances0);
+        n1.setChances(chances1);
+        n2.setChances(chances2);
+        n3.setChances(chances3);
+        n4.setChances(chances4);
+        n5.setChances(chances5);
+        n6.setChances(chances6);
+        ArrayList<Node> ooption0 = new ArrayList<>(Arrays.asList(n1, n2));
+        ArrayList<Node> ooption1 = new ArrayList<>(Arrays.asList(n3, n4));
+        ArrayList<Node> ooption2 = new ArrayList<>(Arrays.asList(n5, n6));
+        ArrayList<Node> ooption3 = new ArrayList<>(Arrays.asList(n1, d1));
+        ArrayList<Node> ooption4 = new ArrayList<>(Arrays.asList(d2, d3));
+        ArrayList<Node> ooption5 = new ArrayList<>(Arrays.asList(d4, d5));
+        ArrayList<Node> ooption6 = new ArrayList<>(Arrays.asList(d6, n2));
+        n0.setOptions(ooption0);
+        n1.setOptions(ooption1);
+        n2.setOptions(ooption2);
+        n3.setOptions(ooption3);
+        n4.setOptions(ooption4);
+        n5.setOptions(ooption5);
+        n6.setOptions(ooption6);
 
-//        Node s3 = new Node("s3", null, null, false);
-//        Node s2 = new Node("s2", null, s3, false);
-//        Node s1 = new Node("s1", null, s2, false);
-//        Node s0 = new Node("s0", s2, s1, false);
-//        s3.setNextStateA(s3);
-//        s3.setNextStateB(s0);
-//        s2.setNextStateB(s3);
-//        s1.setNextStateA(s1);
-//        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"B", "A", "A", "B", "B", "B", "A"}, s0);
-//        System.out.println(f1.getNodes());
+
+        FiniteStateMachine f2 = new FiniteStateMachine(null, n0);
+        System.out.println(f2.getString());
+
+
+
+
 
 //        //maakt nodes aan voor een FiniteStateMachine die een dobbelsteen maakt met 6 zijden
 //        Node d1 = new Node("dice1", null, null, true);
