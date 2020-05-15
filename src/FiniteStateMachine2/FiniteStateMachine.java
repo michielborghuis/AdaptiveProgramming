@@ -1,4 +1,4 @@
-package fsm2;
+package FiniteStateMachine2;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,7 +20,7 @@ public class FiniteStateMachine {
         for (int i = 0; i < sequence.length; i++) { //gaat alle letters in de meegegeven lijst af
             if (currentNode.returnStringNode(sequence[i]) != null) {   //controleert of de node een volgende node heeft voor de gegeven letter
                 Node newNode = currentNode.returnStringNode(sequence[i]);
-                nodes.add(i + 1, newNode);
+                nodes.add(i + 1, newNode); //voegt node toe waar de machine langs gaat
                 currentNode = newNode;
             } else {
                 return nodes;
@@ -29,17 +29,17 @@ public class FiniteStateMachine {
         return nodes;
     }
 
-    public String getString() { //returnt de eindstate(kant van dobbelsteen) waar de dobbelsteen op landt
-        nodes.add(currentNode); //voegt de eerste node(beginstate) toe
+    public String getString() { //returnt de eindnode(kant van dobbelsteen) waar de dobbelsteen op landt
+        nodes.add(currentNode); //voegt de eerste node(beginnode) toe
         Node currentNode = nodes.get(0);
         Random rand = new Random();
-        while (!currentNode.getEndNode()) { //gaat naar de volgende state zolang de huidige state geen eindstate(kan van dobbelsteen) is
+        while (!currentNode.getEndNode()) { //gaat naar de volgende node zolang de huidige node geen eindnode(kant van dobbelsteen) is
             ArrayList<Double> chances = currentNode.getChances();
-            int n = rand.nextInt(100) + 1;
+            int n = rand.nextInt(100) + 1; //genereert een getal tussen de 1 en 100 om de kans in % te kunnen berekenen
             int previousValue = 0;
             for (int i = 0; i < chances.size(); i++) {
-                double chance = chances.get(i);
-                if (n <= 100 - previousValue && n > 100 - chance * 100 - previousValue) {
+                double chance = chances.get(i); //kans dat de machine naar de bijbehorende node gaat
+                if (n <= 100 - previousValue && n > 100 - chance * 100 - previousValue) { //berekent naar welke node de machine gaat
                     currentNode = currentNode.returnNodeChance(i);
                     previousValue += (int) (chance * 100);
                 } else {

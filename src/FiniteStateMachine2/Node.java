@@ -1,13 +1,13 @@
-package fsm2;
-import java.lang.reflect.Array;
+package FiniteStateMachine2;
+
 import java.util.ArrayList;
 
 public class Node {
     private String stateName;
-    private ArrayList<Node> options;
-    private ArrayList<String> keys;
-    private ArrayList<Double> chances;
-    private boolean endNode;
+    private ArrayList<Node> options; //opties voor volgende node
+    private ArrayList<String> keys; //letters die volgende node bepalen (tekst FSM)
+    private ArrayList<Double> chances; //kansen die volgende node bepalen (dobbelsteen FSM)
+    private boolean endNode; //bepaalt of de node een het einde van de machine is
 
     public Node(String st, boolean end){
         stateName = st;
@@ -37,7 +37,7 @@ public class Node {
         return stateName;
     }
 
-    public Node returnStringNode(String let){
+    public Node returnStringNode(String let){ //geeft de volgende node aan de hand van de huidige node en een letter
         if (keys.contains(let)){
             int index = keys.indexOf(let);
             return options.get(index);
@@ -45,7 +45,7 @@ public class Node {
             return null;
         }
     }
-    public Node returnNodeChance(int i){
+    public Node returnNodeChance(int i){ //geeft de volgende node (dobbelsteen FSM)
         return options.get(i);
     }
 

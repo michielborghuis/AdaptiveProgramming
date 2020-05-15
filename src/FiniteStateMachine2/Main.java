@@ -1,6 +1,5 @@
-package fsm2;
+package FiniteStateMachine2;
 
-import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -160,33 +159,5 @@ public class Main {
         f4n3.setOptions(f4option3);
         FiniteStateMachine f4 = new FiniteStateMachine(null, f4n0);
         System.out.println(f4.getString());
-
-
-
-
-
-
-
-
-
-
-//        //maakt nodes aan voor een FiniteStateMachine die een dobbelsteen maakt met 8 zijden
-//        Node dd1 = new Node("dice1", null, null, true);
-//        Node dd2 = new Node("dice2", null, null, true);
-//        Node dd3 = new Node("dice3", null, null, true);
-//        Node dd4 = new Node("dice4", null, null, true);
-//        Node dd5 = new Node("dice5", null, null, true);
-//        Node dd6 = new Node("dice6", null, null, true);
-//        Node dd7 = new Node("dice7", null, null, true);
-//        Node dd8 = new Node("dice8", null, null, true);
-//        Node nn6 = new Node("s6", dd7, dd8, false);
-//        Node nn5 = new Node("s5", dd5, dd6, false);
-//        Node nn4 = new Node("s4", dd3, dd4, false);
-//        Node nn3 = new Node("s3", dd1, dd2, false);
-//        Node nn2 = new Node("s2", nn5, nn6, false);
-//        Node nn1 = new Node("s1", nn3, nn4, false);
-//        Node nn0 = new Node("s0", nn1, nn2, false);
-//        FiniteStateMachine f3 = new FiniteStateMachine(null, nn0);  //nn0 is de beginstate van de Finitestatemachine
-//        System.out.println(f3.getString());                             //vanaf nn0 wordt de rest automatisch gegenereerd
     }
 }
