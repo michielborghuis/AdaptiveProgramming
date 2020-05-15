@@ -12,19 +12,12 @@ public class NodeTest {
     Node nodeTest1 = new Node("test1", false);
     Node nodeTest2 = new Node("test2", false);
 
-    Node n0 = new Node("s0", false);
     Node n1 = new Node("s1", false);
     Node n2 = new Node("s2", false);
     Node n3 = new Node("s3", false);
-    Node d1 = new Node("dice1", true);
-    Node d2 = new Node("dice2", true);
-    Node d3 = new Node("dice3", true);
-    Node d4 = new Node("dice4", true);
-    Node d5 = new Node("dice5", true);
-    Node d6 = new Node("dice6", true);
+
     Node d7 = new Node("dice7", true);
-    Node d8 = new Node("dice8", true);
-    Node d9 = new Node("dice9", true);
+
 
     ArrayList<String> keyTest = new ArrayList<>(Arrays.asList("A", "B", "C"));
     ArrayList<Node> nodesTest = new ArrayList<>(Arrays.asList(n1, n2, n3));
@@ -77,7 +70,5 @@ public class NodeTest {
         nodeTest2.setChances(chancesTest);
         nodeTest2.setOptions(nodesTest);
         assertEquals(n3, nodeTest2.returnNodeChance(2));
-
-
     }
 }
