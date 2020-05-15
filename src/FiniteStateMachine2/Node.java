@@ -37,9 +37,9 @@ public class Node {
         return stateName;
     }
 
-    public Node returnStringNode(String let){ //geeft de volgende node aan de hand van de huidige node en een letter
-        if (keys.contains(let)){
-            int index = keys.indexOf(let);
+    public Node returnStringNode(String cha){ //geeft de volgende node aan de hand van de huidige node en een letter
+        if (keys.contains(cha)){
+            int index = keys.indexOf(cha);
             return options.get(index);
         }else{
             return null;
@@ -47,7 +47,7 @@ public class Node {
     }
     public Node returnNodeChance(int i){ //geeft de volgende node (dobbelsteen FSM)
         return options.get(i);
-    }
+    } //geeft de volgende note voor de dobbelsteen FSM
 
     public String toString() {
         return stateName;

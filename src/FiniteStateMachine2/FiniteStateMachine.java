@@ -29,7 +29,7 @@ public class FiniteStateMachine {
         return nodes;
     }
 
-    public String getString() { //returnt de eindnode(kant van dobbelsteen) waar de dobbelsteen op landt
+    public String getFinalNode() { //returnt de eindnode(kant van dobbelsteen) waar de dobbelsteen op landt
         nodes.add(currentNode); //voegt de eerste node(beginnode) toe
         Node currentNode = nodes.get(0);
         Random rand = new Random();

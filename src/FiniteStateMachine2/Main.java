@@ -28,7 +28,7 @@ public class Main {
         s1.setOptions(options1);
         s2.setOptions(options2);
         s3.setOptions(options3);
-        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"A", "A", "A"}, s0);
+        FiniteStateMachine f1 = new FiniteStateMachine(new String[]{"A", "B", "B", "B", "A"}, s0);
         System.out.println(f1.getNodes());
 
 
@@ -75,7 +75,7 @@ public class Main {
         n5.setOptions(f1option5);
         n6.setOptions(f1option6);
         FiniteStateMachine f2 = new FiniteStateMachine(null, n0);
-        System.out.println(f2.getString());
+        System.out.println(f2.getFinalNode());
 
 
         //finite state machine voor een 8-zijdige dobbelsteen met een ongelijke kans voor de zijden
@@ -124,7 +124,7 @@ public class Main {
         f3n5.setOptions(f3option5);
         f3n6.setOptions(f3option6);
         FiniteStateMachine f3 = new FiniteStateMachine(null, f3n0);
-        System.out.println(f3.getString());
+        System.out.println(f3.getFinalNode());
 
 
         //finite state machine voor een 9-zijdige dobbelsteen met
@@ -158,6 +158,6 @@ public class Main {
         f4n2.setOptions(f4option2);
         f4n3.setOptions(f4option3);
         FiniteStateMachine f4 = new FiniteStateMachine(null, f4n0);
-        System.out.println(f4.getString());
+        System.out.println(f4.getFinalNode());
     }
 }
