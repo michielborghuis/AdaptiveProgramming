@@ -33,7 +33,7 @@ public class Main {
         System.out.println(f1.getNodes());
 
 
-
+        //finite state machine voor 6-zijdige zobbelsteen met een gelijke kans voor elke zijde
         Node n0 = new Node("n0", false);
         Node n1 = new Node("n1", false);
         Node n2 = new Node("n2", false);
@@ -78,6 +78,9 @@ public class Main {
         FiniteStateMachine f2 = new FiniteStateMachine(null, n0);
         System.out.println(f2.getString());
 
+
+        //finite state machine voor een 8-zijdige dobbelsteen met een ongelijke kans voor de zijden
+        //de dobbelsteen zal bijna altijd op de 8 landen
         Node f3n0 = new Node("s0", false);
         Node f3n1 = new Node("s1", false);
         Node f3n2 = new Node("s2", false);
@@ -125,6 +128,7 @@ public class Main {
         System.out.println(f3.getString());
 
 
+        //finite state machine voor een 9-zijdige dobbelsteen met
         Node f4n0 = new Node("s0", false);
         Node f4n1 = new Node("s1", false);
         Node f4n2 = new Node("s2", false);
@@ -151,9 +155,9 @@ public class Main {
         ArrayList<Node> f4option2 = new ArrayList<>(Arrays.asList(f4d4, f4d5, f4d6));
         ArrayList<Node> f4option3 = new ArrayList<>(Arrays.asList(f4d7, f4d8, f4d9));
         f4n0.setOptions(f4option0);
-        f4n0.setOptions(f4option1);
-        f4n0.setOptions(f4option2);
-        f4n0.setOptions(f4option3);
+        f4n1.setOptions(f4option1);
+        f4n2.setOptions(f4option2);
+        f4n3.setOptions(f4option3);
         FiniteStateMachine f4 = new FiniteStateMachine(null, f4n0);
         System.out.println(f4.getString());
 
