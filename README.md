@@ -4,3 +4,4 @@ Daarnaast kan de machine op basis van meegegeven kansen een dobbelsteen worp sim
 Elke FSM hebben meerdere nodes die aangeroepen worden door dee eerste meegegeven node. Op basis van de keuze (tekstverwerking of kans) wordt vervolgens de route of eindnode bepaalt.
 
 De FSM is te vinden in de src-folder en de packagenaam is "FinalStateMachine2". De test voor deze machine zijn te vinden in de FSMtests-folder.
+De UML is te vinden in de main-folder.
