@@ -41,9 +41,9 @@ public class FiniteStateMachine {
                 double chance = chances.get(i);
                 if (n <= 100 - previousValue && n > 100 - chance * 100 - previousValue) {
                     currentNode = currentNode.returnNodeChance(i);
-                    previousValue = (int) (100 - chance * 100);
+                    previousValue += (int) (chance * 100);
                 } else {
-                    previousValue = (int) (100 - chance * 100);
+                    previousValue += (int) (chance * 100);
                 }
             }
         }
